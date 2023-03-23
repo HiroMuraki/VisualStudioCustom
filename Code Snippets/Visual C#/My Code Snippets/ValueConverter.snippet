@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Define a value converter</Title>
+			<Shortcut>value_converter</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>comment</ID>
+					<ToolTip>Comment for the converter.</ToolTip>
+					<Default>comment</Default>
+				</Literal>
+				<Literal>
+					<ID>sourceType</ID>
+					<ToolTip>Source type.</ToolTip>
+					<Default>object</Default>
+				</Literal>
+				<Literal>
+					<ID>targetType</ID>
+					<ToolTip>Target type.</ToolTip>
+					<Default>object</Default>
+				</Literal>
+				<Literal>
+					<ID>converterName</ID>
+					<ToolTip>Name of the value converter.</ToolTip>
+					<Default>MyValue</Default>
+				</Literal>
+			</Declarations>
+			<Imports>
+				<Import>
+					<Namespace>System</Namespace>
+				</Import>
+				<Import>
+					<Namespace>System.Windows.Data</Namespace>
+				</Import>
+				<Import>
+					<Namespace>System.Globalization</Namespace>
+				</Import>
+			</Imports>
+			<Code Language="CSharp">
+				<![CDATA[/// <summary>
+					/// $comment$
+					/// </summary>
+					[ValueConversion(typeof($sourceType$), typeof($targetType$))]
+					public class $converterName$Converter : IValueConverter {
+						public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+							throw new NotImplementedException();
+						}
+
+						public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
+							throw new NotImplementedException();
+						}
+					}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

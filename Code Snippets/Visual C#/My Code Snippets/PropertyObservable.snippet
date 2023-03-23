@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a property for viewmodel layer.</Title>
+            <Shortcut>prop_o</Shortcut>
+			<Description>Define a property for viewmodel layer.</Description>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>comment</ID>
+                    <ToolTip>Comment for the property.</ToolTip>
+                    <Default>comment</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Type of the property.</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>properptyName</ID>
+                    <ToolTip>Name of the property.</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal>
+                    <ID>backingField</ID>
+                    <ToolTip>Backing field for the property.</ToolTip>
+                    <Default>_myProperty</Default>
+                </Literal>
+				<Literal>
+					<ID>defaultValue</ID>
+					<ToolTip>Default value of the property.</ToolTip>
+					<Default>null</Default>
+				</Literal>
+            </Declarations>
+            <Code Language="CSharp">
+				<![CDATA[/// <summary>
+                    /// $comment$
+                    /// </summary>
+                    public $type$ $properptyName$ 
+					{
+                        get => $backingField$;
+                        set => SetProperty(ref $backingField$, value);
+                    }
+					
+					private $type$ $backingField$ = $defaultValue$;$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a DependencyProperty for view layer.</Title>
+            <Shortcut>prop_dp</Shortcut>
+			<Description>efine a DependencyProperty for view layer.</Description>
+        </Header>
+        <Snippet>
+            <Declarations>
+				<Literal>
+					<ID>comment</ID>
+					<ToolTip>Comment for the proeprty.</ToolTip>
+					<Default>comment</Default>
+				</Literal>
+                <Literal>
+                    <ID>propertyName</ID>
+                    <ToolTip>Name of the property</ToolTip>
+                    <Default>PropertyName</Default>
+                </Literal>
+                <Literal>
+                    <ID>propertyType</ID>
+                    <ToolTip>Type of the property</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>ownerClass</ID>
+                    <ToolTip>The owning class of this property.</ToolTip>
+                    <Default>OwnerClass</Default>
+                </Literal>
+                <Literal>
+                    <ID>defaultValue</ID>
+                    <ToolTip>The default value for this property.</ToolTip>
+                    <Default>default</Default>
+                </Literal>
+            </Declarations>
+			<Imports>
+				<Import>
+					<Namespace>System.Windows</Namespace>
+				</Import>
+			</Imports>
+            <Code Language="csharp">
+                <![CDATA[public static readonly DependencyProperty $propertyName$Property = DependencyProperty.Register(
+        nameof($propertyName$), 
+        typeof($propertyType$), 
+        typeof($ownerClass$), 
+        new FrameworkPropertyMetadata($defaultValue$, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+    );
+                    
+					/// <summary>
+					/// $comment$
+					/// </summary>
+                    public $propertyType$ $propertyName$
+                    {
+                        get => ($propertyType$)GetValue($propertyName$Property);
+                        set => SetValue($propertyName$Property, value);
+                    }$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

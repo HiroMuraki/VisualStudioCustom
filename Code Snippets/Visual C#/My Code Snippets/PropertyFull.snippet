@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Full Property</Title>
+            <Shortcut>prop_full</Shortcut>
+			<Description>Define a property with a backing field</Description>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>comments</ID>
+                    <ToolTip>Comments for the field.</ToolTip>
+                    <Default>comments</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Type of the property.</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+				<Literal>
+					<ID>propertyName</ID>
+					<ToolTip>Property name for the property.</ToolTip>
+					<Default>PropertyName</Default>
+				</Literal>
+                <Literal>
+                    <ID>fieldName</ID>
+                    <ToolTip>Backing field for the property.</ToolTip>
+                    <Default>_fieldName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[
+		        /// <summary>
+                /// $comments$
+                /// </summary> 
+				public $type$ $propertyName$
+				{
+				    get => $fieldName$;
+					set 
+					{
+					    $fieldName$ = value;
+				    }
+				}
+				
+				private $type$ $fieldName$;$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
